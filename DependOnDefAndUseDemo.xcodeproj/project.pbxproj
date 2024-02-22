@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C7B4C112B86CF2E006838F8 /* DogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C102B86CF2E006838F8 /* DogView.swift */; };
+		9C7B4C132B86D0D4006838F8 /* DogView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C122B86D0D4006838F8 /* DogView2.swift */; };
+		9C7B4C152B86D5BE006838F8 /* DogView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C142B86D5BE006838F8 /* DogView3.swift */; };
+		9C7B4C172B86D619006838F8 /* DogView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C162B86D619006838F8 /* DogView4.swift */; };
 		9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */; };
 		9CB744E02B7A31F5008CF9FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DF2B7A31F5008CF9FB /* ContentView.swift */; };
 		9CB744E22B7A31F9008CF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB744E12B7A31F9008CF9FB /* Assets.xcassets */; };
 		9CB744E62B7A31F9008CF9FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB744E52B7A31F9008CF9FB /* Preview Assets.xcassets */; };
+		9CB744ED2B7A8313008CF9FB /* UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */; };
+		9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744EE2B7A8499008CF9FB /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C7B4C102B86CF2E006838F8 /* DogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView.swift; sourceTree = "<group>"; };
+		9C7B4C122B86D0D4006838F8 /* DogView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView2.swift; sourceTree = "<group>"; };
+		9C7B4C142B86D5BE006838F8 /* DogView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView3.swift; sourceTree = "<group>"; };
+		9C7B4C162B86D619006838F8 /* DogView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView4.swift; sourceTree = "<group>"; };
 		9CB744DA2B7A31F5008CF9FB /* DependOnDefAndUseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependOnDefAndUseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependOnDefAndUseDemoApp.swift; sourceTree = "<group>"; };
 		9CB744DF2B7A31F5008CF9FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CB744E12B7A31F9008CF9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CB744E32B7A31F9008CF9FB /* DependOnDefAndUseDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DependOnDefAndUseDemo.entitlements; sourceTree = "<group>"; };
 		9CB744E52B7A31F9008CF9FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRepresentable.swift; sourceTree = "<group>"; };
+		9CB744EE2B7A8499008CF9FB /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,12 @@
 			children = (
 				9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */,
 				9CB744DF2B7A31F5008CF9FB /* ContentView.swift */,
+				9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */,
+				9C7B4C102B86CF2E006838F8 /* DogView.swift */,
+				9C7B4C122B86D0D4006838F8 /* DogView2.swift */,
+				9C7B4C142B86D5BE006838F8 /* DogView3.swift */,
+				9C7B4C162B86D619006838F8 /* DogView4.swift */,
+				9CB744EE2B7A8499008CF9FB /* Common.swift */,
 				9CB744E12B7A31F9008CF9FB /* Assets.xcassets */,
 				9CB744E32B7A31F9008CF9FB /* DependOnDefAndUseDemo.entitlements */,
 				9CB744E42B7A31F9008CF9FB /* Preview Content */,
@@ -139,8 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7B4C132B86D0D4006838F8 /* DogView2.swift in Sources */,
+				9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */,
+				9C7B4C172B86D619006838F8 /* DogView4.swift in Sources */,
+				9C7B4C112B86CF2E006838F8 /* DogView.swift in Sources */,
 				9CB744E02B7A31F5008CF9FB /* ContentView.swift in Sources */,
+				9C7B4C152B86D5BE006838F8 /* DogView3.swift in Sources */,
 				9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */,
+				9CB744ED2B7A8313008CF9FB /* UIViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
