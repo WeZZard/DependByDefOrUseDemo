@@ -25,37 +25,30 @@ class DogObject: ObservableObject {
 }
 
 struct DogView2: View {
-
+  
+  static var dependencyType: String {
+    "@StateObject"
+  }
+  
   @StateObject var dog: DogObject
   
   var treat: Treat
 
   var body: some View {
-    Button {
-      dog.reward(treat)
-    } label: {
-      PawView()
+    VStack(spacing: 8) {
+      Text("Change a dependency but not used.")
+      Text("Dependency: \(Self.dependencyType)")
+      VStack {
+        Button {
+          dog.reward(treat)
+        } label: {
+          PawView()
+        }
+        CountView()
+      }
     }
-    CountView()
   }
 
-}
-
-private struct CountView: View {
-  
-  private static var counter: Int = 0
-  
-  let counter: Int
-  
-  init() {
-    Self.counter += 1
-    self.counter = Self.counter
-  }
-  
-  var body: some View {
-    Text(" x ") + Text(verbatim: counter.description)
-  }
-  
 }
 
 #Preview {

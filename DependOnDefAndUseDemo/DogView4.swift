@@ -46,23 +46,6 @@ extension EnvironmentValues {
   
 }
 
-private struct CountView: View {
-  
-  private static var counter: Int = 0
-  
-  let counter: Int
-  
-  init() {
-    Self.counter += 1
-    self.counter = Self.counter
-  }
-  
-  var body: some View {
-    Text(" x ") + Text(verbatim: counter.description)
-  }
-  
-}
-
 struct CountWrapperView: View {
   
   @Environment(\.dog4)
@@ -76,19 +59,29 @@ struct CountWrapperView: View {
 
 struct DogView4: View {
   
+  static var dependencyType: String {
+    "@Environment"
+  }
+  
   @State
   var dog: Dog4
   
   var treat: Treat
 
   var body: some View {
-    Button {
-      dog.reward(treat)
-    } label: {
-      PawView()
+    VStack(spacing: 8) {
+      Text("Change a dependency but not used.")
+      Text("Dependency: \(Self.dependencyType)")
+      VStack {
+        Button {
+          dog.reward(treat)
+        } label: {
+          PawView()
+        }
+        CountWrapperView()
+          .environment(\.dog4, dog)
+      }
     }
-    CountWrapperView()
-      .environment(\.dog4, dog)
   }
 
 }

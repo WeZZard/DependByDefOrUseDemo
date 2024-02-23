@@ -11,38 +11,47 @@ import SwiftUI
 struct DependOnDefAndUseDemoApp: App {
     var body: some Scene {
         WindowGroup {
-          NavigationView {
-              List {
-                NavigationLink(
-                  destination: {
-                    DogView(dog: Dog(), treat: .bone)
-                  },
-                  label: {
-                    Text("Dog1")
-                  })
-                NavigationLink(
-                  destination: {
-                    DogView2(dog: DogObject(), treat: .bone)
-                  },
-                  label: {
-                    Text("Dog2")
-                  })
-                NavigationLink(
-                  destination: {
-                    DogView3(dog: DogObject2(), treat: .bone)
-                  },
-                  label: {
-                    Text("Dog3")
-                  })
-                NavigationLink(
-                  destination: {
-                    DogView4(dog: Dog4(), treat: .bone)
-                  },
-                  label: {
-                    Text("Dog4")
-                  })
-              }
-          }
+          DogViewList()
         }
     }
+}
+
+struct DogViewList: View {
+  
+  var body: some View {
+    NavigationView {
+      List {
+        NavigationLink(
+          destination: DogView(dog: Dog(), treat: .bone).onDisappear {
+            CountView.clear()
+          },
+          label: {
+            Text("Dependency: ") + Text(verbatim: DogView.dependencyType)
+          })
+        NavigationLink(
+          destination: DogView2(dog: DogObject(), treat: .bone).onDisappear {
+            CountView.clear()
+          },
+          label: {
+            Text("Dependency: ") + Text(verbatim: DogView2.dependencyType)
+          })
+        NavigationLink(
+          destination: DogView3(dog: DogObject2(), treat: .bone).onDisappear {
+            CountView.clear()
+          },
+          label: {
+            Text("Dependency: ") + Text(verbatim: DogView3.dependencyType)
+          })
+        NavigationLink(
+          destination: DogView4(dog: Dog4(), treat: .bone).onDisappear {
+            CountView.clear()
+          },
+          label: {
+            Text("Dependency: ") + Text(verbatim: DogView4.dependencyType)
+          })
+      }.navigationTitle("Depdendency change without use")
+      .navigationBarTitleDisplayMode(.inline)
+    }
+  }
+  
 }
