@@ -1,36 +1,20 @@
 //
-//  DogView2.swift
+//  DogViewWithObservedObject.swift
 //  DependOnDefAndUseDemo
 //
-//  Created by WeZZard on 2/22/24.
+//  Created by WeZZard on 2/26/24.
 //
 
 import SwiftUI
 import Combine
 
-class DogObject: ObservableObject {
-
-  @Published
-  var happyValue: Int = 0
-
-  func reward(_ treat: Treat) {
-    switch treat {
-      case .bone:
-        happyValue += 3
-      case .frisbee:
-        happyValue += 1
-    }
-  }
-
-}
-
-struct DogView2: View {
+struct DogViewWithObservedObject: View {
   
   static var dependencyType: String {
-    "@StateObject"
+    "@ObservedObject"
   }
   
-  @StateObject var dog: DogObject
+  @ObservedObject var dog: DogObject
   
   var treat: Treat
 
@@ -44,7 +28,7 @@ struct DogView2: View {
         } label: {
           PawView()
         }
-        CountView()
+        ViewBodyProduceCounterView()
       }
     }
   }
@@ -52,6 +36,6 @@ struct DogView2: View {
 }
 
 #Preview {
-  DogView2(dog: DogObject(), treat: .bone)
+  DogViewWithObservedObject(dog: DogObject(), treat: .bone)
 }
 

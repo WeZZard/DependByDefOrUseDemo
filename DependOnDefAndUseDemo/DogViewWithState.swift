@@ -1,36 +1,19 @@
 //
-//  DogView3.swift
+//  DogViewWithState.swift
 //  DependOnDefAndUseDemo
 //
 //  Created by WeZZard on 2/22/24.
 //
 
 import SwiftUI
-import Observation
 
-@Observable
-class DogObject2 {
-
-  var happyValue: Int = 0
-
-  func reward(_ treat: Treat) {
-    switch treat {
-      case .bone:
-        happyValue += 3
-      case .frisbee:
-        happyValue += 1
-    }
-  }
-
-}
-
-struct DogView3: View {
+struct DogViewWithState: View, DependencyExplaining {
   
   static var dependencyType: String {
-    "@Observable class instance"
+    "@State"
   }
   
-  var dog: DogObject2
+  @State var dog: Dog
   
   var treat: Treat
 
@@ -44,14 +27,13 @@ struct DogView3: View {
         } label: {
           PawView()
         }
-        CountView()
+        ViewBodyProduceCounterView()
       }
     }
   }
-
+  
 }
 
 #Preview {
-  DogView3(dog: DogObject2(), treat: .bone)
+  DogViewWithState(dog: Dog(), treat: .bone)
 }
-
