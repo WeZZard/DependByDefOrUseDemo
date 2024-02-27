@@ -20,8 +20,7 @@ struct DogViewWithStateObject: View, DependencyExplaining {
 
   var body: some View {
     VStack(spacing: 8) {
-      Text("Change a dependency but not used.")
-      Text("Dependency: \(Self.dependencyType)")
+      Text("View Dependency: \(Self.dependencyType)")
       VStack {
         Button {
           dog.reward(treat)
@@ -30,6 +29,7 @@ struct DogViewWithStateObject: View, DependencyExplaining {
         }
         ViewBodyProduceCounterView()
       }
+      Text("Change a dependency but not used.")
     }
   }
 

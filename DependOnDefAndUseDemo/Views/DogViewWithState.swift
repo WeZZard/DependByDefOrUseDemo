@@ -1,27 +1,25 @@
 //
-//  DogViewWithObservedObject.swift
+//  DogViewWithState.swift
 //  DependOnDefAndUseDemo
 //
-//  Created by WeZZard on 2/26/24.
+//  Created by WeZZard on 2/22/24.
 //
 
 import SwiftUI
-import Combine
 
-struct DogViewWithObservedObject: View {
+struct DogViewWithState: View, DependencyExplaining {
   
   static var dependencyType: String {
-    "@ObservedObject"
+    "@State"
   }
   
-  @ObservedObject var dog: DogObject
+  @State var dog: Dog
   
   var treat: Treat
 
   var body: some View {
     VStack(spacing: 8) {
-      Text("Change a dependency but not used.")
-      Text("Dependency: \(Self.dependencyType)")
+      Text("View Dependency: \(Self.dependencyType)")
       VStack {
         Button {
           dog.reward(treat)
@@ -30,12 +28,12 @@ struct DogViewWithObservedObject: View {
         }
         ViewBodyProduceCounterView()
       }
+      Text("Change a dependency but not used.")
     }
   }
-
+  
 }
 
 #Preview {
-  DogViewWithObservedObject(dog: DogObject(), treat: .bone)
+  DogViewWithState(dog: Dog(), treat: .bone)
 }
-

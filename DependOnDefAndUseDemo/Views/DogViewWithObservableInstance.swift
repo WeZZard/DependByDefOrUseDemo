@@ -10,7 +10,7 @@ import SwiftUI
 struct DogViewWithObservableInstance: View, DependencyExplaining {
   
   static var dependencyType: String {
-    "@Observable class instance"
+    "@Observable instance var"
   }
   
   var dog: DogObject2
@@ -19,8 +19,7 @@ struct DogViewWithObservableInstance: View, DependencyExplaining {
 
   var body: some View {
     VStack(spacing: 8) {
-      Text("Change a dependency but not used.")
-      Text("Dependency: \(Self.dependencyType)")
+      Text("View Dependency: \(Self.dependencyType)")
       VStack {
         Button {
           dog.reward(treat)
@@ -29,6 +28,7 @@ struct DogViewWithObservableInstance: View, DependencyExplaining {
         }
         ViewBodyProduceCounterView()
       }
+      Text("Change a dependency but not used.")
     }
   }
 

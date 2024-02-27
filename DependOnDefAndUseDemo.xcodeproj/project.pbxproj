@@ -13,7 +13,15 @@
 		9C7B4C172B86D619006838F8 /* DogViewWithEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */; };
 		9C7B4C1B2B8CDC06006838F8 /* DogViewWithObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C1A2B8CDC06006838F8 /* DogViewWithObservedObject.swift */; };
 		9C7B4C1D2B8CEA55006838F8 /* DogViewWithBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */; };
-		9C7B4C1F2B8CFBAD006838F8 /* WrapperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C1E2B8CFBAD006838F8 /* WrapperViews.swift */; };
+		9C7B4C1F2B8CFBAD006838F8 /* DominatingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C1E2B8CFBAD006838F8 /* DominatingViews.swift */; };
+		9C7B4C212B8D919A006838F8 /* ListOfViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C202B8D919A006838F8 /* ListOfViews.swift */; };
+		9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */; };
+		9C7B4C272B8D946E006838F8 /* PlatformDogViewWithState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C262B8D946E006838F8 /* PlatformDogViewWithState.swift */; };
+		9C7B4C292B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */; };
+		9C7B4C2B2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */; };
+		9C7B4C2D2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */; };
+		9C7B4C2F2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */; };
+		9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */; };
 		9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */; };
 		9CB744E02B7A31F5008CF9FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DF2B7A31F5008CF9FB /* ContentView.swift */; };
 		9CB744E22B7A31F9008CF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB744E12B7A31F9008CF9FB /* Assets.xcassets */; };
@@ -29,7 +37,15 @@
 		9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithEnvironment.swift; sourceTree = "<group>"; };
 		9C7B4C1A2B8CDC06006838F8 /* DogViewWithObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithObservedObject.swift; sourceTree = "<group>"; };
 		9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithBinding.swift; sourceTree = "<group>"; };
-		9C7B4C1E2B8CFBAD006838F8 /* WrapperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperViews.swift; sourceTree = "<group>"; };
+		9C7B4C1E2B8CFBAD006838F8 /* DominatingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominatingViews.swift; sourceTree = "<group>"; };
+		9C7B4C202B8D919A006838F8 /* ListOfViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfViews.swift; sourceTree = "<group>"; };
+		9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlatformViews.swift; sourceTree = "<group>"; };
+		9C7B4C262B8D946E006838F8 /* PlatformDogViewWithState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithState.swift; sourceTree = "<group>"; };
+		9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDependencyExplainingView.swift; sourceTree = "<group>"; };
+		9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithStateObject.swift; sourceTree = "<group>"; };
+		9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithObservedObject.swift; sourceTree = "<group>"; };
+		9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithObservableInstance.swift; sourceTree = "<group>"; };
+		9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithBinding.swift; sourceTree = "<group>"; };
 		9CB744DA2B7A31F5008CF9FB /* DependOnDefAndUseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependOnDefAndUseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependOnDefAndUseDemoApp.swift; sourceTree = "<group>"; };
 		9CB744DF2B7A31F5008CF9FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +67,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C7B4C242B8D944A006838F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B4C102B86CF2E006838F8 /* DogViewWithState.swift */,
+				9C7B4C122B86D0D4006838F8 /* DogViewWithStateObject.swift */,
+				9C7B4C1A2B8CDC06006838F8 /* DogViewWithObservedObject.swift */,
+				9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */,
+				9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */,
+				9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C7B4C252B8D9455006838F8 /* PlatformViews */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B4C262B8D946E006838F8 /* PlatformDogViewWithState.swift */,
+				9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */,
+				9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */,
+				9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */,
+				9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */,
+				9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */,
+			);
+			path = PlatformViews;
+			sourceTree = "<group>";
+		};
 		9CB744D12B7A31F5008CF9FB = {
 			isa = PBXGroup;
 			children = (
@@ -70,16 +112,14 @@
 		9CB744DC2B7A31F5008CF9FB /* DependOnDefAndUseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9C7B4C252B8D9455006838F8 /* PlatformViews */,
+				9C7B4C242B8D944A006838F8 /* Views */,
 				9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */,
 				9CB744DF2B7A31F5008CF9FB /* ContentView.swift */,
 				9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */,
-				9C7B4C102B86CF2E006838F8 /* DogViewWithState.swift */,
-				9C7B4C122B86D0D4006838F8 /* DogViewWithStateObject.swift */,
-				9C7B4C1A2B8CDC06006838F8 /* DogViewWithObservedObject.swift */,
-				9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */,
-				9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */,
-				9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */,
-				9C7B4C1E2B8CFBAD006838F8 /* WrapperViews.swift */,
+				9C7B4C202B8D919A006838F8 /* ListOfViews.swift */,
+				9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */,
+				9C7B4C1E2B8CFBAD006838F8 /* DominatingViews.swift */,
 				9CB744EE2B7A8499008CF9FB /* Common.swift */,
 				9CB744E12B7A31F9008CF9FB /* Assets.xcassets */,
 				9CB744E32B7A31F9008CF9FB /* DependOnDefAndUseDemo.entitlements */,
@@ -166,17 +206,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7B4C2B2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift in Sources */,
+				9C7B4C292B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift in Sources */,
 				9C7B4C1B2B8CDC06006838F8 /* DogViewWithObservedObject.swift in Sources */,
 				9C7B4C132B86D0D4006838F8 /* DogViewWithStateObject.swift in Sources */,
+				9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */,
 				9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */,
-				9C7B4C1F2B8CFBAD006838F8 /* WrapperViews.swift in Sources */,
+				9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */,
+				9C7B4C1F2B8CFBAD006838F8 /* DominatingViews.swift in Sources */,
 				9C7B4C172B86D619006838F8 /* DogViewWithEnvironment.swift in Sources */,
 				9C7B4C112B86CF2E006838F8 /* DogViewWithState.swift in Sources */,
+				9C7B4C2F2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift in Sources */,
 				9C7B4C1D2B8CEA55006838F8 /* DogViewWithBinding.swift in Sources */,
+				9C7B4C272B8D946E006838F8 /* PlatformDogViewWithState.swift in Sources */,
 				9CB744E02B7A31F5008CF9FB /* ContentView.swift in Sources */,
 				9C7B4C152B86D5BE006838F8 /* DogViewWithObservableInstance.swift in Sources */,
+				9C7B4C2D2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift in Sources */,
 				9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */,
 				9CB744ED2B7A8313008CF9FB /* UIViewRepresentable.swift in Sources */,
+				9C7B4C212B8D919A006838F8 /* ListOfViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +376,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.WeZZardDesign.DependOnDefAndUseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,7 +415,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.WeZZardDesign.DependOnDefAndUseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

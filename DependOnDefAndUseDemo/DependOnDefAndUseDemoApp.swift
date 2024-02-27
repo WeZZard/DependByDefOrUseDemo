@@ -21,29 +21,11 @@ struct DogViewList: View {
   var body: some View {
     NavigationView {
       List {
-        NavigationLink(DogViewWithState(dog: Dog(), treat: .bone))
-        NavigationLink(DogViewWithStateObject(dog: DogObject(), treat: .bone))
-        NavigationLink(DogViewWithObservableInstance(dog: DogObject2(), treat: .bone))
-        NavigationLink(DogViewWithEnvironment(dog: Dog(), treat: .bone))
-        NavigationLink {
-          StateWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
+        NavigationLink("View Examples") {
+          ListOfViews()
         }
-        NavigationLink {
-          StateObjectWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          ObservedObjectWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          BindableWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
+        NavigationLink("UIViewRepresentable Examples") {
+          ListOfPlatformViews()
         }
       }.navigationTitle("Depdendency change without use")
       .navigationBarTitleDisplayMode(.inline)
@@ -55,7 +37,7 @@ struct DogViewList: View {
 extension NavigationLink {
   
   init<Content: View & DependencyExplaining>(_ dependencyExplainingView: Content) where Label == Text, Destination == AnyView {
-    self.init("Dependency: \(Content.dependencyType)") {
+    self.init("\(Content.dependencyType)") {
       AnyView(
         dependencyExplainingView.clearViewBodyProduceCount()
       )
@@ -63,11 +45,7 @@ extension NavigationLink {
   }
   
   init<Content: View & DependencyExplaining>(@ViewBuilder _ dependencyExplainingView: () -> Content) where Label == Text, Destination == AnyView {
-    self.init("Dependency: \(Content.dependencyType)") {
-      AnyView(
-        dependencyExplainingView().clearViewBodyProduceCount()
-      )
-    }
+    self.init(dependencyExplainingView())
   }
   
 }
