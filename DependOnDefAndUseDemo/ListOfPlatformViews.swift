@@ -15,9 +15,7 @@ struct ListOfPlatformViews: View {
         NavigationLink(PlatformDogViewWithStateObject(dog: DogObject(), treat: .bone))
         NavigationLink(PlatformDogViewWithObservedObject(dog: DogObject(), treat: .bone))
         NavigationLink(PlatformDogViewWithObservableInstance(dog: DogObject2(), treat: .bone))
-        /*
-        NavigationLink(DogViewWithEnvironment(dog: Dog(), treat: .bone))
-         */
+        NavigationLink(PlatformDogViewWithEnvironment(dog: Dog(), treat: .bone))
         NavigationLink {
           StateWrapperView(data: Dog()) { data in
             PlatformDogViewWithBinding(dog: data, treat: .bone)

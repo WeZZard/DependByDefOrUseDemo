@@ -27,7 +27,13 @@ struct DogViewList: View {
         NavigationLink("UIViewRepresentable Examples") {
           ListOfPlatformViews()
         }
-      }.navigationTitle("Depdendency change without use")
+        NavigationLink("@State v.s. Observation") {
+          StateVSObservationView()
+        }
+        NavigationLink("UIViewRepresentable and Environment System") {
+          UIViewRepresentableAndEnvironment()
+        }
+      }.navigationTitle("Depdendency build patterns")
       .navigationBarTitleDisplayMode(.inline)
     }
   }

@@ -28,7 +28,7 @@ struct DogViewWithEnvironment: View, DependencyExplaining {
           PawView()
         }
         EnvironmentWrappedView()
-          .environment(\.dog4, dog)
+          .environment(\.dog, dog)
       }
       Text("Change a dependency but not used.")
     }
@@ -42,7 +42,7 @@ struct DogViewWithEnvironment: View, DependencyExplaining {
 
 private struct EnvironmentWrappedView: View {
   
-  @Environment(\.dog4)
+  @Environment(\.dog)
   var dog
   
   var body: some View {

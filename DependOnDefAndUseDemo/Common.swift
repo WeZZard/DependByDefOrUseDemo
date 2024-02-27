@@ -66,24 +66,26 @@ class DogObject2 {
 
 // MARK: - EnvironmentValues
 
-enum ActiveCounter: Equatable {
-  case counter1
-  case counter2
+enum Animal: Equatable {
+  
+  case dog
+  
+  case cat
   
   var name: String {
     switch self {
-    case .counter1:
-      "1"
-    case .counter2:
-      "2"
+    case .dog:
+      return "dog"
+    case .cat:
+      return "cat"
     }
   }
 }
 
-private struct ActiveCounterKey: EnvironmentKey {
+private struct ActiveAnimalKey: EnvironmentKey {
   
-  static var defaultValue: ActiveCounter {
-    .counter1
+  static var defaultValue: Animal {
+    return .dog
   }
   
 }
@@ -91,7 +93,7 @@ private struct ActiveCounterKey: EnvironmentKey {
 private struct Counter1Key: EnvironmentKey {
   
   static var defaultValue: Int {
-    0
+    return 0
   }
   
 }
@@ -99,23 +101,23 @@ private struct Counter1Key: EnvironmentKey {
 private struct Counter2Key: EnvironmentKey {
   
   static var defaultValue: Int {
-    0
+    return 0
   }
   
 }
 
 extension EnvironmentValues {
   
-  var activeCounter: ActiveCounter {
+  var animalOnTheStage: Animal {
     get {
-      self[ActiveCounterKey.self]
+      self[ActiveAnimalKey.self]
     }
     set {
-      self[ActiveCounterKey.self] = newValue
+      self[ActiveAnimalKey.self] = newValue
     }
   }
   
-  var counter1: Int {
+  var dogPawprints: Int {
     get {
       self[Counter1Key.self]
     }
@@ -124,7 +126,7 @@ extension EnvironmentValues {
     }
   }
   
-  var counter2: Int {
+  var catPawprints: Int {
     get {
       self[Counter2Key.self]
     }
@@ -147,7 +149,7 @@ extension EnvironmentValues {
     
   }
   
-  var dog4: Dog {
+  var dog: Dog {
     get {
       self[Key.self]
     }

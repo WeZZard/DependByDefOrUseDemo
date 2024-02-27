@@ -17,8 +17,8 @@ struct PlatformDogViewWithBinding: PlatformDependencyExplainingView {
   var dog: Dog
   
   var treat: Treat
-
-  func action() {
+  
+  func action(_ environmentValues: EnvironmentValues) {
     dog.reward(treat)
   }
   

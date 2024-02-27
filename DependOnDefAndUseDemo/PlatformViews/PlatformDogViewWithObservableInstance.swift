@@ -16,8 +16,8 @@ struct PlatformDogViewWithObservableInstance: PlatformDependencyExplainingView {
   var dog: DogObject2
   
   var treat: Treat
-
-  func action() {
+  
+  func action(_ environmentValues: EnvironmentValues) {
     dog.reward(treat)
   }
   

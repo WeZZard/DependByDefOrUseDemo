@@ -22,11 +22,12 @@
 		9C7B4C2D2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */; };
 		9C7B4C2F2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */; };
 		9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */; };
+		9C7B4C332B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C322B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift */; };
 		9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */; };
-		9CB744E02B7A31F5008CF9FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DF2B7A31F5008CF9FB /* ContentView.swift */; };
+		9CB744E02B7A31F5008CF9FB /* StateVSObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DF2B7A31F5008CF9FB /* StateVSObservationView.swift */; };
 		9CB744E22B7A31F9008CF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB744E12B7A31F9008CF9FB /* Assets.xcassets */; };
 		9CB744E62B7A31F9008CF9FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB744E52B7A31F9008CF9FB /* Preview Assets.xcassets */; };
-		9CB744ED2B7A8313008CF9FB /* UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */; };
+		9CB744ED2B7A8313008CF9FB /* UIViewRepresentableAndEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744EC2B7A8313008CF9FB /* UIViewRepresentableAndEnvironment.swift */; };
 		9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744EE2B7A8499008CF9FB /* Common.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +47,14 @@
 		9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithObservedObject.swift; sourceTree = "<group>"; };
 		9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithObservableInstance.swift; sourceTree = "<group>"; };
 		9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithBinding.swift; sourceTree = "<group>"; };
+		9C7B4C322B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithEnvironment.swift; sourceTree = "<group>"; };
 		9CB744DA2B7A31F5008CF9FB /* DependOnDefAndUseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependOnDefAndUseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependOnDefAndUseDemoApp.swift; sourceTree = "<group>"; };
-		9CB744DF2B7A31F5008CF9FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9CB744DF2B7A31F5008CF9FB /* StateVSObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateVSObservationView.swift; sourceTree = "<group>"; };
 		9CB744E12B7A31F9008CF9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CB744E32B7A31F9008CF9FB /* DependOnDefAndUseDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DependOnDefAndUseDemo.entitlements; sourceTree = "<group>"; };
 		9CB744E52B7A31F9008CF9FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRepresentable.swift; sourceTree = "<group>"; };
+		9CB744EC2B7A8313008CF9FB /* UIViewRepresentableAndEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRepresentableAndEnvironment.swift; sourceTree = "<group>"; };
 		9CB744EE2B7A8499008CF9FB /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */,
 				9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */,
 				9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */,
+				9C7B4C322B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift */,
 				9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */,
 				9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */,
 			);
@@ -115,8 +118,8 @@
 				9C7B4C252B8D9455006838F8 /* PlatformViews */,
 				9C7B4C242B8D944A006838F8 /* Views */,
 				9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */,
-				9CB744DF2B7A31F5008CF9FB /* ContentView.swift */,
-				9CB744EC2B7A8313008CF9FB /* UIViewRepresentable.swift */,
+				9CB744DF2B7A31F5008CF9FB /* StateVSObservationView.swift */,
+				9CB744EC2B7A8313008CF9FB /* UIViewRepresentableAndEnvironment.swift */,
 				9C7B4C202B8D919A006838F8 /* ListOfViews.swift */,
 				9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */,
 				9C7B4C1E2B8CFBAD006838F8 /* DominatingViews.swift */,
@@ -212,6 +215,7 @@
 				9C7B4C132B86D0D4006838F8 /* DogViewWithStateObject.swift in Sources */,
 				9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */,
 				9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */,
+				9C7B4C332B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift in Sources */,
 				9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */,
 				9C7B4C1F2B8CFBAD006838F8 /* DominatingViews.swift in Sources */,
 				9C7B4C172B86D619006838F8 /* DogViewWithEnvironment.swift in Sources */,
@@ -219,11 +223,11 @@
 				9C7B4C2F2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift in Sources */,
 				9C7B4C1D2B8CEA55006838F8 /* DogViewWithBinding.swift in Sources */,
 				9C7B4C272B8D946E006838F8 /* PlatformDogViewWithState.swift in Sources */,
-				9CB744E02B7A31F5008CF9FB /* ContentView.swift in Sources */,
+				9CB744E02B7A31F5008CF9FB /* StateVSObservationView.swift in Sources */,
 				9C7B4C152B86D5BE006838F8 /* DogViewWithObservableInstance.swift in Sources */,
 				9C7B4C2D2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift in Sources */,
 				9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */,
-				9CB744ED2B7A8313008CF9FB /* UIViewRepresentable.swift in Sources */,
+				9CB744ED2B7A8313008CF9FB /* UIViewRepresentableAndEnvironment.swift in Sources */,
 				9C7B4C212B8D919A006838F8 /* ListOfViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

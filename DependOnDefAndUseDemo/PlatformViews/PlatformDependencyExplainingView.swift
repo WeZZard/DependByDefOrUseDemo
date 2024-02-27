@@ -12,7 +12,7 @@ protocol PlatformDependencyExplainingView: UIViewRepresentable, DependencyExplai
   UIViewType == PlatformBodyView
 {
   
-  func action()
+  func action(_ environmentValues: EnvironmentValues)
   
 }
 
@@ -25,12 +25,13 @@ extension PlatformDependencyExplainingView {
   }
   
   func updateUIView(_ uiView: PlatformBodyView, context: Context) {
+    context.coordinator.environmentValues = context.environment
     uiView.updateUIViewCount += 1
   }
   
   func makeCoordinator() -> PlatformBodyCoordinator {
-    PlatformBodyCoordinator(dependencyType: Self.dependencyType) {
-      action()
+    PlatformBodyCoordinator(dependencyType: Self.dependencyType) { environmentValues in
+      action(environmentValues)
     }
   }
   
@@ -40,16 +41,19 @@ class PlatformBodyCoordinator: NSObject {
   
   let dependencyType: String
   
-  var action: () -> Void
+  var action: (EnvironmentValues) -> Void
   
-  init(dependencyType: String, action: @escaping () -> Void) {
+  var environmentValues: EnvironmentValues
+  
+  init(dependencyType: String, action: @escaping (EnvironmentValues) -> Void) {
     self.dependencyType = dependencyType
     self.action = action
+    self.environmentValues = EnvironmentValues()
   }
   
   @objc
   func touchUpInside(_ button: UIButton) {
-    action()
+    action(environmentValues)
   }
   
 }
