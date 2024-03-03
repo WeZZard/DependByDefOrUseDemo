@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C73FE862B923F60006EC561 /* DependencyExplainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */; };
+		9C73FE882B92D984006EC561 /* BindingUpstreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */; };
+		9C73FE8A2B94E1FA006EC561 /* DogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FE892B94E1FA006EC561 /* DogView.swift */; };
 		9C7B4C112B86CF2E006838F8 /* DogViewWithState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C102B86CF2E006838F8 /* DogViewWithState.swift */; };
 		9C7B4C132B86D0D4006838F8 /* DogViewWithStateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C122B86D0D4006838F8 /* DogViewWithStateObject.swift */; };
 		9C7B4C152B86D5BE006838F8 /* DogViewWithObservableInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyExplainingView.swift; sourceTree = "<group>"; };
+		9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingUpstreamView.swift; sourceTree = "<group>"; };
+		9C73FE892B94E1FA006EC561 /* DogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView.swift; sourceTree = "<group>"; };
 		9C7B4C102B86CF2E006838F8 /* DogViewWithState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithState.swift; sourceTree = "<group>"; };
 		9C7B4C122B86D0D4006838F8 /* DogViewWithStateObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithStateObject.swift; sourceTree = "<group>"; };
 		9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithObservableInstance.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 				9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */,
 				9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */,
 				9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */,
+				9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */,
+				9C73FE892B94E1FA006EC561 /* DogView.swift */,
+				9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,7 +225,9 @@
 				9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */,
 				9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */,
 				9C7B4C332B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift in Sources */,
+				9C73FE862B923F60006EC561 /* DependencyExplainingView.swift in Sources */,
 				9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */,
+				9C73FE8A2B94E1FA006EC561 /* DogView.swift in Sources */,
 				9C7B4C1F2B8CFBAD006838F8 /* DominatingViews.swift in Sources */,
 				9C7B4C172B86D619006838F8 /* DogViewWithEnvironment.swift in Sources */,
 				9C7B4C112B86CF2E006838F8 /* DogViewWithState.swift in Sources */,
@@ -226,6 +237,7 @@
 				9CB744E02B7A31F5008CF9FB /* StateVSObservationView.swift in Sources */,
 				9C7B4C152B86D5BE006838F8 /* DogViewWithObservableInstance.swift in Sources */,
 				9C7B4C2D2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift in Sources */,
+				9C73FE882B92D984006EC561 /* BindingUpstreamView.swift in Sources */,
 				9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */,
 				9CB744ED2B7A8313008CF9FB /* UIViewRepresentableAndEnvironment.swift in Sources */,
 				9C7B4C212B8D919A006838F8 /* ListOfViews.swift in Sources */,

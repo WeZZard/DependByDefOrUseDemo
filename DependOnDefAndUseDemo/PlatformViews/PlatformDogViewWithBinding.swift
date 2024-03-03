@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlatformDogViewWithBinding: PlatformDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@Binding"
   }
   

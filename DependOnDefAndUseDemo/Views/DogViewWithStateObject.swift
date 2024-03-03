@@ -8,34 +8,94 @@
 import SwiftUI
 import Combine
 
-struct DogViewWithStateObject: View, DependencyExplaining {
+struct DogViewWithStateObject: SimpleInitDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@StateObject"
   }
   
-  @StateObject var dog: DogObject
+  typealias Data = DogObject
   
-  var treat: Treat
-
-  var body: some View {
-    VStack(spacing: 8) {
-      Text("View Dependency: \(Self.dependencyType)")
-      VStack {
-        Button {
-          dog.reward(treat)
-        } label: {
-          PawView()
-        }
-        ViewBodyProduceCounterView()
-      }
-      Text("Change a dependency but not used.")
+  func getData() -> Data {
+    DogObject()
+  }
+  
+  struct View1: DogViewSimplInit {
+    
+    @StateObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = StateObject(wrappedValue: dog)
+      self.treat = treat
     }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View2: DogViewSimplInit, UseName {
+    
+    @StateObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = StateObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View3: DogViewSimplInit, UseHappiness {
+    
+    @StateObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = StateObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View4: DogViewSimplInit, UseName, UseHappiness {
+    
+    @StateObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = StateObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
   }
 
 }
 
+
 #Preview {
-  DogViewWithStateObject(dog: DogObject(), treat: .bone)
+  DogViewWithStateObject()
 }
 

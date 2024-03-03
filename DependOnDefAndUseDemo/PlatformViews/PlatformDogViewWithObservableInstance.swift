@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlatformDogViewWithObservableInstance: PlatformDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@Observable instance var"
   }
   

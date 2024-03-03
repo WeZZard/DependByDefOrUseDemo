@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ListOfPlatformViews: View {
   
+  static let title = "Dog UIViewRepresentables"
+  
   var body: some View {
       List {
         NavigationLink(PlatformDogViewWithState(dog: Dog(), treat: .bone))
@@ -16,6 +18,7 @@ struct ListOfPlatformViews: View {
         NavigationLink(PlatformDogViewWithObservedObject(dog: DogObject(), treat: .bone))
         NavigationLink(PlatformDogViewWithObservableInstance(dog: DogObject2(), treat: .bone))
         NavigationLink(PlatformDogViewWithEnvironment(dog: Dog(), treat: .bone))
+        /*
         NavigationLink {
           StateWrapperView(data: Dog()) { data in
             PlatformDogViewWithBinding(dog: data, treat: .bone)
@@ -36,7 +39,8 @@ struct ListOfPlatformViews: View {
             PlatformDogViewWithBinding(dog: data, treat: .bone)
           }
         }
-      }.navigationTitle("UIViewRepresentable Examples")
+         */
+      }.navigationTitle(Self.title)
       .navigationBarTitleDisplayMode(.inline)
   }
   

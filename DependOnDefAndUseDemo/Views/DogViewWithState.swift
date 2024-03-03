@@ -7,33 +7,72 @@
 
 import SwiftUI
 
-struct DogViewWithState: View, DependencyExplaining {
+struct DogViewWithState: SimpleInitDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@State"
   }
   
-  @State var dog: Dog
+  typealias Data = Dog
   
-  var treat: Treat
-
-  var body: some View {
-    VStack(spacing: 8) {
-      Text("View Dependency: \(Self.dependencyType)")
-      VStack {
-        Button {
-          dog.reward(treat)
-        } label: {
-          PawView()
-        }
-        ViewBodyProduceCounterView()
-      }
-      Text("Change a dependency but not used.")
-    }
+  func getData() -> Data {
+    Dog()
   }
   
+  struct View1: DogViewSimplInit {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View2: DogViewSimplInit, UseName {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View3: DogViewSimplInit, UseHappiness {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View4: DogViewSimplInit, UseName, UseHappiness {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
 }
 
 #Preview {
-  DogViewWithState(dog: Dog(), treat: .bone)
+  DogViewWithState()
 }

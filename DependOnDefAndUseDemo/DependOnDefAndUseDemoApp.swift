@@ -21,10 +21,10 @@ struct DogViewList: View {
   var body: some View {
     NavigationView {
       List {
-        NavigationLink("View Examples") {
+        NavigationLink(ListOfViews.title) {
           ListOfViews()
         }
-        NavigationLink("UIViewRepresentable Examples") {
+        NavigationLink(ListOfPlatformViews.title) {
           ListOfPlatformViews()
         }
         NavigationLink("@State v.s. Observation") {
@@ -42,15 +42,13 @@ struct DogViewList: View {
 
 extension NavigationLink {
   
-  init<Content: View & DependencyExplaining>(_ dependencyExplainingView: Content) where Label == Text, Destination == AnyView {
-    self.init("\(Content.dependencyType)") {
-      AnyView(
-        dependencyExplainingView.clearViewBodyProduceCount()
-      )
+  init(_ dependencyExplainingView: Destination) where Label == Text, Destination: View & DependencyExplaining {
+    self.init(dependencyExplainingView.dependencyType) {
+      dependencyExplainingView
     }
   }
   
-  init<Content: View & DependencyExplaining>(@ViewBuilder _ dependencyExplainingView: () -> Content) where Label == Text, Destination == AnyView {
+  init(@ViewBuilder _ dependencyExplainingView: () -> Destination) where Label == Text, Destination: View & DependencyExplaining {
     self.init(dependencyExplainingView())
   }
   

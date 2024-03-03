@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlatformDogViewWithState: PlatformDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@State"
   }
   

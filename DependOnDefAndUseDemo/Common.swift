@@ -17,48 +17,78 @@ enum Treat {
   case frisbee
 }
 
-struct Dog: Equatable {
+protocol DogProtocol {
+  
+  static var keyPath: WritableKeyPath<EnvironmentValues, Self> { get }
+  
+  var name: String { get }
+  
+  var happiness: Int { get }
+  
+  mutating func reward(_ treat: Treat)
+  
+}
 
-  var happyValue: Int = 0
+struct Dog: DogProtocol, Equatable {
+  
+  static var keyPath: WritableKeyPath<EnvironmentValues, Self> {
+    \.dog
+  }
+  
+  var happiness: Int = 0
 
+  var name: String = "Thor"
+  
   mutating func reward(_ treat: Treat) {
     switch treat {
       case .bone:
-        happyValue += 3
+        happiness += 3
       case .frisbee:
-        happyValue += 1
+        happiness += 1
     }
   }
 
 }
 
-class DogObject: ObservableObject {
-
+final class DogObject: DogProtocol, ObservableObject {
+  
+  class var keyPath: WritableKeyPath<EnvironmentValues, DogObject> {
+    \.dogObject
+  }
+  
   @Published
-  var happyValue: Int = 0
-
+  var happiness: Int = 0
+  
+  var name: String = "Thor"
+  
   func reward(_ treat: Treat) {
     switch treat {
       case .bone:
-        happyValue += 3
+        happiness += 3
       case .frisbee:
-        happyValue += 1
+        happiness += 1
     }
   }
 
 }
 
 @Observable
-class DogObject2 {
+final class DogObject2: DogProtocol {
+  
+  class var keyPath: WritableKeyPath<EnvironmentValues, DogObject2> {
+    \.dogObject2
+  }
+  
+  var happiness: Int = 0
 
-  var happyValue: Int = 0
-
+  var name: String = "Thor"
+  
   func reward(_ treat: Treat) {
     switch treat {
       case .bone:
-        happyValue += 3
+        happiness += 3
       case .frisbee:
-        happyValue += 1
+        happiness += 1
     }
   }
 
@@ -139,7 +169,7 @@ extension EnvironmentValues {
 
 extension EnvironmentValues {
   
-  private struct Key: EnvironmentKey {
+  private struct DogKey: EnvironmentKey {
     
     typealias Value = Dog
     
@@ -149,12 +179,50 @@ extension EnvironmentValues {
     
   }
   
+  private struct DogObjectKey: EnvironmentKey {
+    
+    typealias Value = DogObject
+    
+    static var defaultValue: DogObject {
+      DogObject()
+    }
+    
+  }
+  
+  private struct DogObject2Key: EnvironmentKey {
+    
+    typealias Value = DogObject2
+    
+    static var defaultValue: DogObject2 {
+      DogObject2()
+    }
+    
+  }
+  
   var dog: Dog {
     get {
-      self[Key.self]
+      self[DogKey.self]
     }
     set {
-      self[Key.self] = newValue
+      self[DogKey.self] = newValue
+    }
+  }
+  
+  var dogObject: DogObject {
+    get {
+      self[DogObjectKey.self]
+    }
+    set {
+      self[DogObjectKey.self] = newValue
+    }
+  }
+  
+  var dogObject2: DogObject2 {
+    get {
+      self[DogObject2Key.self]
+    }
+    set {
+      self[DogObject2Key.self] = newValue
     }
   }
   
@@ -164,7 +232,7 @@ extension EnvironmentValues {
 
 protocol DependencyExplaining {
   
-  static var dependencyType: String { get }
+  var dependencyType: String { get }
   
 }
 
@@ -180,31 +248,40 @@ struct PawView: View {
 
 struct ViewBodyProduceCounterView: View {
   
-  fileprivate static func clear() {
-    counter = 0
+  private static var seed: Int = 0
+  
+  private class Store: ObservableObject {
+    
+    var count: Int = 0
+    
   }
   
-  private static var counter: Int = 0
+  @StateObject
+  private var store: Store
   
-  let counter: Int
+  private var seed: Int
   
   init() {
-    Self.counter += 1
-    self.counter = Self.counter
+    defer {
+      Self.seed += 1
+    }
+    self._store = StateObject(wrappedValue: Store())
+    self.seed = Self.seed
+  }
+  
+  private func increase() {
+    store.count += 1
   }
   
   var body: some View {
-    Text(" x ") + Text(verbatim: counter.description)
-  }
-  
-}
-
-
-extension View {
-  
-  func clearViewBodyProduceCount() -> some View {
-    onDisappear {
-      ViewBodyProduceCounterView.clear()
+    let _ = increase()
+    Group {
+      Text(" x ") + Text(verbatim: store.count.description)
+    }
+    // Use onChange(of:, ...) to build a stable dependency that guarantees a
+    // view body production.
+    .onChange(of: seed) { oldValue, newValue in
+      // do nothing
     }
   }
   

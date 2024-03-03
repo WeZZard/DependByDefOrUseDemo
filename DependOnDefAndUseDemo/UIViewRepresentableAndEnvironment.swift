@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+private let dogFace: some View = Image("dog_face")
+  .resizable()
+  .aspectRatio(contentMode: .fill)
+  .frame(width: 22, height: 22)
+
+private let catFace: some View = Image("cat_face")
+  .resizable()
+  .aspectRatio(contentMode: .fill)
+  .frame(width: 22, height: 22)
+
 struct UIViewRepresentableAndEnvironment: View {
   
   @State
@@ -21,7 +31,13 @@ struct UIViewRepresentableAndEnvironment: View {
   var body: some View {
     VStack {
       VStack {
-        Text(Image(systemName: "dog.fill")) + Text(Image(systemName: "cat.fill")) + Text(": var  ") + Text(Image(systemName: "pawprint.fill")) + Text(": EnvironmentValues")
+        HStack {
+          Text("var")
+          dogFace
+          catFace
+          Text(" ")
+          Text("EnvironmentValues ") + Text(Image(systemName: "pawprint.fill"))
+        }
         VarAnimalAndEnvironmentValuesPawprints(animal: animalOnTheStage)
           .environment(\.dogPawprints, dogPawprints)
           .environment(\.catPawprints, catPawprints)
@@ -36,7 +52,13 @@ struct UIViewRepresentableAndEnvironment: View {
           .border(.secondary, width: 0.5)
       }
       VStack {
-        Text(Image(systemName: "dog.fill")) + Text(Image(systemName: "cat.fill")) + Text(": var  ") + Text(Image(systemName: "pawprint.fill")) + Text(": @Environment")
+        HStack {
+          Text("var")
+          dogFace
+          catFace
+          Text(" ")
+          Text("@Environment ") + Text(Image(systemName: "pawprint.fill"))
+        }
         VarAnimalAndEnvironmentPawprints(animal: animalOnTheStage)
           .environment(\.dogPawprints, dogPawprints)
           .environment(\.catPawprints, catPawprints)
@@ -50,38 +72,34 @@ struct UIViewRepresentableAndEnvironment: View {
           .environment(\.animalOnTheStage, animalOnTheStage)
           .border(.secondary, width: 0.5)
       }
+      Picker("Animal on the stage", selection: $animalOnTheStage) {
+        Text("Dog").tag(Animal.dog)
+        Text("Cat").tag(Animal.cat)
+      }
+      .pickerStyle(.segmented)
+      Spacer()
+      HStack {
+        Spacer()
+        pawprintButton(.dog)
+        Spacer()
+        pawprintButton(.cat)
+        Spacer()
+      }
     }.padding()
-    HStack {
-      Spacer()
-      animalButtons(.dog)
-      Spacer()
-      animalButtons(.cat)
-      Spacer()
-    }
   }
   
   @ViewBuilder
-  func animalButtons(_ animal: Animal) -> some View {
-    VStack(spacing: 8) {
-      Button {
-        animalOnTheStage = animal
-      } label: {
-        Image(systemName: "\(animal.name).fill")
+  func pawprintButton(_ animal: Animal) -> some View {
+    Button {
+      switch animal {
+      case .dog:
+        dogPawprints += 1
+      case .cat:
+        catPawprints += 1
       }
-      HStack {
-        Button {
-          switch animal {
-          case .dog:
-            dogPawprints += 1
-          case .cat:
-            catPawprints += 1
-          }
-        } label: {
-          Image(systemName: "pawprint.fill")
-        }
-      }
-    }.opacity(animalOnTheStage == animal ? 1.0 : 0.5)
-    .font(.title)
+    } label: {
+      Image(systemName: "pawprint.fill")
+    }.font(.title)
   }
   
 }
@@ -100,7 +118,6 @@ private struct CounterView: View {
   
   var body: some View {
     VStack {
-      Spacer()
       summaryView
         .font(.title)
       Spacer()
@@ -112,14 +129,20 @@ private struct CounterView: View {
             .monospacedDigit()
         }.font(.footnote)
       }
-      Spacer()
     }
     .padding()
   }
   
   @ViewBuilder
-  var summaryView: Text {
-      Text(Image(systemName: animalOnTheStage.name + ".fill")) + Text(" ") + Text(Image(systemName: "pawprint.fill")) + Text(verbatim: " x ") + Text(verbatim: pawprints.description)
+  var summaryView: some View {
+    HStack {
+      Image(animalOnTheStage.name + "_face")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 56, height: 56)
+      Spacer()
+      Text(Image(systemName: "pawprint.fill")) + Text(verbatim: " x ") + Text(verbatim: pawprints.description).monospacedDigit()
+    }.padding()
   }
   
 }

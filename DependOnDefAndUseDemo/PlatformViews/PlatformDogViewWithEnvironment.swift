@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlatformDogViewWithEnvironment: View, DependencyExplaining {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@Environment"
   }
   
@@ -30,7 +30,7 @@ struct PlatformDogViewWithEnvironment: View, DependencyExplaining {
 
 private struct PlatformDogViewWithEnvironmentBody: PlatformDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@Environment"
   }
   

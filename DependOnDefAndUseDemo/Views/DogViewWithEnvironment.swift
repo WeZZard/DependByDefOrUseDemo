@@ -7,46 +7,72 @@
 
 import SwiftUI
 
-struct DogViewWithEnvironment: View, DependencyExplaining {
+struct DogViewWithEnvironment: View, SimpleInitDependencyExplainingView {
   
-  static var dependencyType: String {
+  var dependencyType: String {
     "@Environment"
   }
   
-  @State
-  var dog: Dog
+  typealias Data = Dog
   
-  var treat: Treat
-
-  var body: some View {
-    VStack(spacing: 8) {
-      Text("View Dependency: \(Self.dependencyType)")
-      VStack {
-        Button {
-          dog.reward(treat)
-        } label: {
-          PawView()
-        }
-        EnvironmentWrappedView()
-          .environment(\.dog, dog)
-      }
-      Text("Change a dependency but not used.")
+  func getData() -> Dog {
+    Dog()
+  }
+  
+  struct View1: DogViewSimplInit, ViewBodyUseDogAsEnvironment {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
     }
+    
+  }
+
+  struct View2: DogViewSimplInit, UseName, ViewBodyUseDogAsEnvironment {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View3: DogViewSimplInit, UseHappiness, ViewBodyUseDogAsEnvironment {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View4: DogViewSimplInit, UseName, UseHappiness, ViewBodyUseDogAsEnvironment {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
   }
 
 }
 
 #Preview {
-  DogViewWithEnvironment(dog: Dog(), treat: .bone)
-}
-
-private struct EnvironmentWrappedView: View {
-  
-  @Environment(\.dog)
-  var dog
-  
-  var body: some View {
-    ViewBodyProduceCounterView()
-  }
-  
+  DogViewWithEnvironment()
 }

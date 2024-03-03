@@ -9,33 +9,20 @@ import SwiftUI
 
 struct ListOfViews: View {
   
+  static let title = "Dog Views"
+  
   var body: some View {
       List {
-        NavigationLink(DogViewWithState(dog: Dog(), treat: .bone))
-        NavigationLink(DogViewWithStateObject(dog: DogObject(), treat: .bone))
-        NavigationLink(DogViewWithObservableInstance(dog: DogObject2(), treat: .bone))
-        NavigationLink(DogViewWithEnvironment(dog: Dog(), treat: .bone))
-        NavigationLink {
-          StateWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          StateObjectWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          ObservedObjectWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          BindableWrapperView(data: Dog()) { data in
-            DogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-      }.navigationTitle("View Examples")
+        NavigationLink(DogViewWithState())
+        NavigationLink(DogViewWithStateObject())
+        NavigationLink(DogViewWithObservedObject())
+        NavigationLink(DogViewWithObservableInstance())
+        NavigationLink(DogViewWithEnvironment())
+        NavigationLink(DogViewWithBinding(upstream: .state))
+        NavigationLink(DogViewWithBinding(upstream: .stateObject))
+        NavigationLink(DogViewWithBinding(upstream: .observedObject))
+        NavigationLink(DogViewWithBinding(upstream: .bindable))
+      }.navigationTitle(Self.title)
       .navigationBarTitleDisplayMode(.inline)
   }
   
