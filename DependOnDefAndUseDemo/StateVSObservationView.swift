@@ -22,7 +22,7 @@ private class Model {
 struct StateVSObservationView: View {
   
   var body: some View {
-    HStack {
+    VStack {
       VStack {
         Text("@State")
         StateAnimalView()
@@ -43,6 +43,8 @@ struct StateVSObservationView: View {
 protocol AnimalView: View {
   
   static var bodyAccessCount: Int { get set }
+  
+  var animalOnTheStageBinding: Binding<Animal> { get }
 
   var animalOnTheStage: Animal { get nonmutating set }
   
@@ -68,6 +70,10 @@ extension AnimalView {
     let _ = (Self.bodyAccessCount += 1)
     Text("Body access count: ") + Text(verbatim: Self.bodyAccessCount.description)
     VStack(spacing: 16) {
+      Picker("Animal on the stage", selection: animalOnTheStageBinding) {
+        Text("Dog").tag(Animal.dog)
+        Text("Cat").tag(Animal.cat)
+      }.pickerStyle(.segmented)
       HStack {
         Spacer()
         animalButtons(.dog)
@@ -86,11 +92,6 @@ extension AnimalView {
   @ViewBuilder
   func animalButtons(_ animal: Animal) -> some View {
     VStack(spacing: 8) {
-      Button {
-        animalOnTheStage = animal
-      } label: {
-        Image(systemName: "\(animal.name).fill")
-      }
       HStack {
         Button {
           switch animal {
@@ -107,8 +108,14 @@ extension AnimalView {
   }
   
   @ViewBuilder
-  var summaryView: Text {
-    Text(Image(systemName: animalOnTheStage.name + ".fill")) + Text(" ") + Text(Image(systemName: "pawprint.fill")) + Text(verbatim: " x ") + Text(verbatim: pawprints.description)
+  var summaryView: some View {
+    HStack {
+      Image(animalOnTheStage.name + "_face")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 28, height: 28)
+      Text(" ") + Text(Image(systemName: "pawprint.fill")) + Text(verbatim: " x ") + Text(verbatim: pawprints.description)
+    }.monospacedDigit()
   }
   
 }
@@ -119,6 +126,10 @@ struct StateAnimalView: AnimalView {
 
   @State
   var animalOnTheStage: Animal = .dog
+  
+  var animalOnTheStageBinding: Binding<Animal> {
+    $animalOnTheStage
+  }
   
   @State
   var dogPawprints = 0
@@ -141,6 +152,10 @@ struct ObservationAnimalView: AnimalView {
     nonmutating set {
       model.animalOnTheStage = newValue
     }
+  }
+  
+  var animalOnTheStageBinding: Binding<Animal> {
+    Bindable(model).animalOnTheStage
   }
   
   var dogPawprints: Int {
