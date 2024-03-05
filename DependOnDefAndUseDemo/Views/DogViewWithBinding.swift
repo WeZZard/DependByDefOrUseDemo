@@ -121,7 +121,7 @@ struct DogViewWithBinding: DependencyExplainingView {
     }
   }
   
-  struct _View1: DogView {
+  struct _View1: DSLDogView, DogView {
     
     @Binding
     var dog: Dog
@@ -134,7 +134,7 @@ struct DogViewWithBinding: DependencyExplainingView {
     
   }
 
-  struct _View2: DogView, UseName {
+  struct _View2: DSLDogView, DogView, UseName {
     
     @Binding
     var dog: Dog
@@ -147,7 +147,7 @@ struct DogViewWithBinding: DependencyExplainingView {
     
   }
 
-  struct _View3: DogView, UseHappiness {
+  struct _View3: DSLDogView, DogView, UseHappiness {
     
     @Binding
     var dog: Dog
@@ -160,7 +160,7 @@ struct DogViewWithBinding: DependencyExplainingView {
     
   }
 
-  struct _View4: DogView, UseName, UseHappiness {
+  struct _View4: DSLDogView, DogView, UseName, UseHappiness {
     
     @Binding
     var dog: Dog

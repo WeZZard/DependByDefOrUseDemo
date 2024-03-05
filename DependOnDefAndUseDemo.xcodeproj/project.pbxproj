@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C3C93612B971309009338FC /* PlatformDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C93602B971309009338FC /* PlatformDogView.xib */; };
+		9C456A2E2B9725C800BEF3D2 /* PlatformDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C456A2D2B9725C800BEF3D2 /* PlatformDogView.swift */; };
+		9C456A322B97286500BEF3D2 /* DSLDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C456A312B97286500BEF3D2 /* DSLDogView.swift */; };
 		9C73FE862B923F60006EC561 /* DependencyExplainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */; };
 		9C73FE882B92D984006EC561 /* BindingUpstreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */; };
 		9C73FE8A2B94E1FA006EC561 /* DogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73FE892B94E1FA006EC561 /* DogView.swift */; };
@@ -20,12 +23,10 @@
 		9C7B4C212B8D919A006838F8 /* ListOfViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C202B8D919A006838F8 /* ListOfViews.swift */; };
 		9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */; };
 		9C7B4C272B8D946E006838F8 /* PlatformDogViewWithState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C262B8D946E006838F8 /* PlatformDogViewWithState.swift */; };
-		9C7B4C292B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */; };
 		9C7B4C2B2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */; };
 		9C7B4C2D2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */; };
 		9C7B4C2F2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */; };
 		9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */; };
-		9C7B4C332B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B4C322B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift */; };
 		9CB744DE2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */; };
 		9CB744E02B7A31F5008CF9FB /* StateVSObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB744DF2B7A31F5008CF9FB /* StateVSObservationView.swift */; };
 		9CB744E22B7A31F9008CF9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CB744E12B7A31F9008CF9FB /* Assets.xcassets */; };
@@ -35,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C3C93602B971309009338FC /* PlatformDogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatformDogView.xib; sourceTree = "<group>"; };
+		9C456A2D2B9725C800BEF3D2 /* PlatformDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogView.swift; sourceTree = "<group>"; };
+		9C456A312B97286500BEF3D2 /* DSLDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLDogView.swift; sourceTree = "<group>"; };
 		9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyExplainingView.swift; sourceTree = "<group>"; };
 		9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingUpstreamView.swift; sourceTree = "<group>"; };
 		9C73FE892B94E1FA006EC561 /* DogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView.swift; sourceTree = "<group>"; };
@@ -48,12 +52,10 @@
 		9C7B4C202B8D919A006838F8 /* ListOfViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfViews.swift; sourceTree = "<group>"; };
 		9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPlatformViews.swift; sourceTree = "<group>"; };
 		9C7B4C262B8D946E006838F8 /* PlatformDogViewWithState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithState.swift; sourceTree = "<group>"; };
-		9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDependencyExplainingView.swift; sourceTree = "<group>"; };
 		9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithStateObject.swift; sourceTree = "<group>"; };
 		9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithObservedObject.swift; sourceTree = "<group>"; };
 		9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithObservableInstance.swift; sourceTree = "<group>"; };
 		9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithBinding.swift; sourceTree = "<group>"; };
-		9C7B4C322B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithEnvironment.swift; sourceTree = "<group>"; };
 		9CB744DA2B7A31F5008CF9FB /* DependOnDefAndUseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependOnDefAndUseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB744DD2B7A31F5008CF9FB /* DependOnDefAndUseDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependOnDefAndUseDemoApp.swift; sourceTree = "<group>"; };
 		9CB744DF2B7A31F5008CF9FB /* StateVSObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateVSObservationView.swift; sourceTree = "<group>"; };
@@ -84,9 +86,8 @@
 				9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */,
 				9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */,
 				9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */,
-				9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */,
-				9C73FE892B94E1FA006EC561 /* DogView.swift */,
 				9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */,
+				9C456A312B97286500BEF3D2 /* DSLDogView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,9 +99,9 @@
 				9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */,
 				9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */,
 				9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */,
-				9C7B4C322B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift */,
 				9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */,
-				9C7B4C282B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift */,
+				9C456A2D2B9725C800BEF3D2 /* PlatformDogView.swift */,
+				9C3C93602B971309009338FC /* PlatformDogView.xib */,
 			);
 			path = PlatformViews;
 			sourceTree = "<group>";
@@ -133,6 +134,8 @@
 				9C7B4C222B8D91E0006838F8 /* ListOfPlatformViews.swift */,
 				9C7B4C1E2B8CFBAD006838F8 /* DominatingViews.swift */,
 				9CB744EE2B7A8499008CF9FB /* Common.swift */,
+				9C73FE892B94E1FA006EC561 /* DogView.swift */,
+				9C73FE852B923F60006EC561 /* DependencyExplainingView.swift */,
 				9CB744E12B7A31F9008CF9FB /* Assets.xcassets */,
 				9CB744E32B7A31F9008CF9FB /* DependOnDefAndUseDemo.entitlements */,
 				9CB744E42B7A31F9008CF9FB /* Preview Content */,
@@ -208,6 +211,7 @@
 			files = (
 				9CB744E62B7A31F9008CF9FB /* Preview Assets.xcassets in Resources */,
 				9CB744E22B7A31F9008CF9FB /* Assets.xcassets in Resources */,
+				9C3C93612B971309009338FC /* PlatformDogView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,15 +223,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C7B4C2B2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift in Sources */,
-				9C7B4C292B8D9E8A006838F8 /* PlatformDependencyExplainingView.swift in Sources */,
 				9C7B4C1B2B8CDC06006838F8 /* DogViewWithObservedObject.swift in Sources */,
 				9C7B4C132B86D0D4006838F8 /* DogViewWithStateObject.swift in Sources */,
+				9C456A322B97286500BEF3D2 /* DSLDogView.swift in Sources */,
 				9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */,
 				9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */,
-				9C7B4C332B8E1C69006838F8 /* PlatformDogViewWithEnvironment.swift in Sources */,
 				9C73FE862B923F60006EC561 /* DependencyExplainingView.swift in Sources */,
 				9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */,
 				9C73FE8A2B94E1FA006EC561 /* DogView.swift in Sources */,
+				9C456A2E2B9725C800BEF3D2 /* PlatformDogView.swift in Sources */,
 				9C7B4C1F2B8CFBAD006838F8 /* DominatingViews.swift in Sources */,
 				9C7B4C172B86D619006838F8 /* DogViewWithEnvironment.swift in Sources */,
 				9C7B4C112B86CF2E006838F8 /* DogViewWithState.swift in Sources */,

@@ -13,36 +13,16 @@ struct ListOfPlatformViews: View {
   
   var body: some View {
       List {
-        NavigationLink(PlatformDogViewWithState(dog: Dog(), treat: .bone))
-        NavigationLink(PlatformDogViewWithStateObject(dog: DogObject(), treat: .bone))
-        NavigationLink(PlatformDogViewWithObservedObject(dog: DogObject(), treat: .bone))
-        NavigationLink(PlatformDogViewWithObservableInstance(dog: DogObject2(), treat: .bone))
-        NavigationLink(PlatformDogViewWithEnvironment(dog: Dog(), treat: .bone))
-        /*
-        NavigationLink {
-          StateWrapperView(data: Dog()) { data in
-            PlatformDogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          StateObjectWrapperView(data: Dog()) { data in
-            PlatformDogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          ObservedObjectWrapperView(data: Dog()) { data in
-            PlatformDogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-        NavigationLink {
-          BindableWrapperView(data: Dog()) { data in
-            PlatformDogViewWithBinding(dog: data, treat: .bone)
-          }
-        }
-         */
+        NavigationLink(PlatformDogViewWithState())
+        NavigationLink(PlatformDogViewWithStateObject())
+        NavigationLink(PlatformDogViewWithObservedObject())
+        NavigationLink(PlatformDogViewWithObservableInstance())
+        NavigationLink(PlatformDogViewWithBinding(upstream: .state))
+        NavigationLink(PlatformDogViewWithBinding(upstream: .stateObject))
+        NavigationLink(PlatformDogViewWithBinding(upstream: .observedObject))
+        NavigationLink(PlatformDogViewWithBinding(upstream: .bindable))
       }.navigationTitle(Self.title)
       .navigationBarTitleDisplayMode(.inline)
   }
   
 }
-

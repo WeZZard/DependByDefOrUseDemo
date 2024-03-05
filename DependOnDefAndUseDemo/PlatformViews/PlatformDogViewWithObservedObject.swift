@@ -7,22 +7,92 @@
 
 import SwiftUI
 
-struct PlatformDogViewWithObservedObject: PlatformDependencyExplainingView {
+struct PlatformDogViewWithObservedObject: SimpleInitDependencyExplainingView {
   
   var dependencyType: String {
     "@ObservedObject"
   }
   
-  @ObservedObject var dog: DogObject
+  typealias Data = DogObject
   
-  var treat: Treat
+  func getData() -> Data {
+    DogObject()
+  }
   
-  func action(_ environmentValues: EnvironmentValues) {
-    dog.reward(treat)
+  struct View1: PlatformDogView, DogViewSimplInit {
+    
+    @ObservedObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = ObservedObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View2: PlatformDogView, DogViewSimplInit, UseName {
+    
+    @ObservedObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = ObservedObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View3: PlatformDogView, DogViewSimplInit, UseHappiness {
+    
+    @ObservedObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = ObservedObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View4: PlatformDogView, DogViewSimplInit, UseName, UseHappiness {
+    
+    @ObservedObject
+    var dog: DogObject
+    
+    var treat: Treat
+    
+    init(dog: DogObject, treat: Treat) {
+      self._dog = ObservedObject(wrappedValue: dog)
+      self.treat = treat
+    }
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
   }
   
 }
 
 #Preview {
-  PlatformDogViewWithObservedObject(dog: DogObject(), treat: .bone)
+  PlatformDogViewWithObservedObject()
 }

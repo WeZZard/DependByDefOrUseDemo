@@ -19,7 +19,7 @@ struct DogViewWithState: SimpleInitDependencyExplainingView {
     Dog()
   }
   
-  struct View1: DogViewSimplInit {
+  struct View1: DSLDogView, DogViewSimplInit {
     
     @State
     var dog: Dog
@@ -32,7 +32,7 @@ struct DogViewWithState: SimpleInitDependencyExplainingView {
     
   }
 
-  struct View2: DogViewSimplInit, UseName {
+  struct View2: DSLDogView, DogViewSimplInit, UseName {
     
     @State
     var dog: Dog
@@ -45,7 +45,7 @@ struct DogViewWithState: SimpleInitDependencyExplainingView {
     
   }
 
-  struct View3: DogViewSimplInit, UseHappiness {
+  struct View3: DSLDogView, DogViewSimplInit, UseHappiness {
     
     @State
     var dog: Dog
@@ -58,7 +58,7 @@ struct DogViewWithState: SimpleInitDependencyExplainingView {
     
   }
 
-  struct View4: DogViewSimplInit, UseName, UseHappiness {
+  struct View4: DSLDogView, DogViewSimplInit, UseName, UseHappiness {
     
     @State
     var dog: Dog

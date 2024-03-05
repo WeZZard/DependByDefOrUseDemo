@@ -19,7 +19,7 @@ struct DogViewWithEnvironment: View, SimpleInitDependencyExplainingView {
     Dog()
   }
   
-  struct View1: DogViewSimplInit, ViewBodyUseDogAsEnvironment {
+  struct View1: DSLDogView, DogViewSimplInit, ViewBodyUseDogAsEnvironment {
     
     @State
     var dog: Dog
@@ -32,7 +32,7 @@ struct DogViewWithEnvironment: View, SimpleInitDependencyExplainingView {
     
   }
 
-  struct View2: DogViewSimplInit, UseName, ViewBodyUseDogAsEnvironment {
+  struct View2: DSLDogView, DogViewSimplInit, UseName, ViewBodyUseDogAsEnvironment {
     
     @State
     var dog: Dog
@@ -45,7 +45,7 @@ struct DogViewWithEnvironment: View, SimpleInitDependencyExplainingView {
     
   }
 
-  struct View3: DogViewSimplInit, UseHappiness, ViewBodyUseDogAsEnvironment {
+  struct View3: DSLDogView, DogViewSimplInit, UseHappiness, ViewBodyUseDogAsEnvironment {
     
     @State
     var dog: Dog
@@ -58,7 +58,7 @@ struct DogViewWithEnvironment: View, SimpleInitDependencyExplainingView {
     
   }
 
-  struct View4: DogViewSimplInit, UseName, UseHappiness, ViewBodyUseDogAsEnvironment {
+  struct View4: DSLDogView, DogViewSimplInit, UseName, UseHappiness, ViewBodyUseDogAsEnvironment {
     
     @State
     var dog: Dog

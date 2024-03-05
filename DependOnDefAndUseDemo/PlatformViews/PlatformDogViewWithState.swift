@@ -7,22 +7,71 @@
 
 import SwiftUI
 
-struct PlatformDogViewWithState: PlatformDependencyExplainingView {
+struct PlatformDogViewWithState: SimpleInitDependencyExplainingView {
   
   var dependencyType: String {
     "@State"
   }
   
-  @State var dog: Dog
+  typealias Data = Dog
   
-  var treat: Treat
-  
-  func action(_ environmentValues: EnvironmentValues) {
-    dog.reward(treat)
+  func getData() -> Data {
+    Dog()
   }
   
+  struct View1: PlatformDogView, DogViewSimplInit {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View2: PlatformDogView, DogViewSimplInit, UseName {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View3: PlatformDogView, DogViewSimplInit, UseHappiness {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View4: PlatformDogView, DogViewSimplInit, UseName, UseHappiness {
+    
+    @State
+    var dog: Dog
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
 }
 
 #Preview {
-  PlatformDogViewWithState(dog: Dog(), treat: .bone)
+  PlatformDogViewWithState()
 }

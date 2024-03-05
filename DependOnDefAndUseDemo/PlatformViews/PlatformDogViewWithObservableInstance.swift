@@ -7,22 +7,68 @@
 
 import SwiftUI
 
-struct PlatformDogViewWithObservableInstance: PlatformDependencyExplainingView {
+struct PlatformDogViewWithObservableInstance: SimpleInitDependencyExplainingView {
   
   var dependencyType: String {
     "@Observable instance var"
   }
   
-  var dog: DogObject2
+  typealias Data = DogObject2
   
-  var treat: Treat
+  func getData() -> Data {
+    DogObject2()
+  }
   
-  func action(_ environmentValues: EnvironmentValues) {
-    dog.reward(treat)
+  struct View1: PlatformDogView, DogViewSimplInit {
+    
+    var dog: DogObject2
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View2: PlatformDogView, DogViewSimplInit, UseName {
+    
+    var dog: DogObject2
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View3: PlatformDogView, DogViewSimplInit, UseHappiness {
+    
+    var dog: DogObject2
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
+  }
+
+  struct View4: PlatformDogView, DogViewSimplInit, UseName, UseHappiness {
+    
+    var dog: DogObject2
+    
+    var treat: Treat
+    
+    func reward() {
+      dog.reward(treat)
+    }
+    
   }
   
 }
 
 #Preview {
-  PlatformDogViewWithObservableInstance(dog: DogObject2(), treat: .bone)
+  PlatformDogViewWithObservableInstance()
 }
