@@ -17,6 +17,8 @@ struct ListOfPlatformViews: View {
         NavigationLink(PlatformDogViewWithStateObject())
         NavigationLink(PlatformDogViewWithObservedObject())
         NavigationLink(PlatformDogViewWithObservableInstance())
+        NavigationLink(PlatformDogViewWithEnvironment())
+        NavigationLink(PlatformDogViewWithEnvironmentObject())
         NavigationLink(PlatformDogViewWithBinding(upstream: .state))
         NavigationLink(PlatformDogViewWithBinding(upstream: .stateObject))
         NavigationLink(PlatformDogViewWithBinding(upstream: .observedObject))

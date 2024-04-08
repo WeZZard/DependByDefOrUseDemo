@@ -18,6 +18,7 @@ struct ListOfViews: View {
         NavigationLink(DogViewWithObservedObject())
         NavigationLink(DogViewWithObservableInstance())
         NavigationLink(DogViewWithEnvironment())
+        NavigationLink(DogViewWithEnvironmentObject())
         NavigationLink(DogViewWithBinding(upstream: .state))
         NavigationLink(DogViewWithBinding(upstream: .stateObject))
         NavigationLink(DogViewWithBinding(upstream: .observedObject))

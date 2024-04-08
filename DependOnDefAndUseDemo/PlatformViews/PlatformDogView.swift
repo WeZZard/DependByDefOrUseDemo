@@ -12,6 +12,8 @@ protocol PlatformDogView: UIViewRepresentable, DogView where
   UIViewType == PlatformBodyView
 {
   
+  func additionUpdateUIView(_ uiView: PlatformBodyView, context: Context)
+  
 }
 
 extension PlatformDogView {
@@ -36,6 +38,11 @@ extension PlatformDogView {
     } else {
       uiView.happiness = nil
     }
+    additionUpdateUIView(uiView, context: context)
+  }
+  
+  func additionUpdateUIView(_ uiView: PlatformBodyView, context: Context) {
+    
   }
   
   func makeCoordinator() -> PlatformBodyCoordinator {
@@ -136,6 +143,14 @@ class PlatformBodyView: UIView {
   @IBOutlet
   weak var happinessLabel: UILabel!
   
+  private var hostingView = _UIHostingView<AnyView>(rootView: AnyView(EmptyView()))
+  
+  var rootView: AnyView = AnyView(EmptyView()) {
+    didSet {
+      hostingView.rootView = rootView
+    }
+  }
+  
   @IBAction
   func reward(_ sender: UIButton) {
     guard let coordinator else {
@@ -158,9 +173,48 @@ class PlatformBodyView: UIView {
       environmentDogUsingView.frame = bounds
       environmentDogUsingView.setNeedsLayout()
     }
+    
+    // Use nested DSL host to send preference values out
+    if hostingView.superview != self {
+      addSubview(hostingView)
+      hostingView.frame = bounds
+    }
+    sendSubviewToBack(hostingView)
   }
   
 }
+
+protocol EnvironmentPlatformDogView: PlatformDogView where DogType: Equatable {
+  
+  var newDog: DogType { get }
+  
+}
+
+extension EnvironmentPlatformDogView {
+  
+  func additionUpdateUIView(_ uiView: PlatformBodyView, context: UIViewRepresentableContext<Self>) {
+    uiView.rootView = AnyView(PlatformEnvironmentValueWritingView(dog: newDog))
+  }
+  
+}
+
+struct PlatformEnvironmentValueWritingView<DogType: DogProtocol & Equatable>: View {
+  
+  var dog: DogType
+  
+  var body: some View {
+    Color.white.preference(key: DogValueKey<DogType>.self, value: dog)
+  }
+  
+}
+
+private let dogFaceImage: some View = Image("dog_face")
+  .resizable()
+  .aspectRatio(contentMode: .fit)
+  .tint(.accentColor)
+  .opacity(0.8)
+  .frame(width: 100, height: 100)
+  .foregroundColor(.accentColor)
 
 private struct ExamplePlatformDogView: PlatformDogView {
   

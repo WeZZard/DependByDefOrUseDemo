@@ -15,7 +15,7 @@ struct PlatformDogViewWithState: SimpleInitDependencyExplainingView {
   
   typealias Data = Dog
   
-  func getData() -> Data {
+  func makeData() -> Data {
     Dog()
   }
   

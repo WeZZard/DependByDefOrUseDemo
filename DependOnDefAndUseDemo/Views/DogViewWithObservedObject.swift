@@ -16,7 +16,7 @@ struct DogViewWithObservedObject: SimpleInitDependencyExplainingView {
   
   typealias Data = DogObject
   
-  func getData() -> Data {
+  func makeData() -> Data {
     DogObject()
   }
   

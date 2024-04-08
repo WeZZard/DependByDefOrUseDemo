@@ -1,13 +1,13 @@
 //
-//  DogViewWithEnvironment.swift
+//  PlatformDogViewWithEnvironment.swift
 //  DependOnDefAndUseDemo
 //
-//  Created by WeZZard on 2/22/24.
+//  Created by WeZZard on 4/8/24.
 //
 
 import SwiftUI
 
-struct DogViewWithEnvironment: View, EnvironmentExplainingView {
+struct PlatformDogViewWithEnvironment: View, EnvironmentExplainingView {
   
   var dependencyType: String {
     "@Environment"
@@ -18,7 +18,7 @@ struct DogViewWithEnvironment: View, EnvironmentExplainingView {
   @State
   private var dog: Dog = Dog()
   
-  struct View1: EnvironmentDSLDogView, DogViewEnvironmentInit {
+  struct View1: EnvironmentPlatformDogView, DogViewEnvironmentInit {
     
     @Environment(Dog.keyPath)
     var dog: Dog
@@ -39,7 +39,7 @@ struct DogViewWithEnvironment: View, EnvironmentExplainingView {
     
   }
 
-  struct View2: EnvironmentDSLDogView, DogViewEnvironmentInit, UseName {
+  struct View2: EnvironmentPlatformDogView, DogViewEnvironmentInit, UseName {
     
     @Environment(Dog.keyPath)
     var dog: Dog
@@ -60,7 +60,7 @@ struct DogViewWithEnvironment: View, EnvironmentExplainingView {
     
   }
 
-  struct View3: EnvironmentDSLDogView, DogViewEnvironmentInit, UseHappiness {
+  struct View3: EnvironmentPlatformDogView, DogViewEnvironmentInit, UseHappiness {
     
     @Environment(Dog.keyPath)
     var dog: Dog
@@ -81,7 +81,7 @@ struct DogViewWithEnvironment: View, EnvironmentExplainingView {
     
   }
 
-  struct View4: EnvironmentDSLDogView, DogViewEnvironmentInit, UseName, UseHappiness {
+  struct View4: EnvironmentPlatformDogView, DogViewEnvironmentInit, UseName, UseHappiness {
     
     @Environment(Dog.keyPath)
     var dog: Dog
@@ -105,5 +105,5 @@ struct DogViewWithEnvironment: View, EnvironmentExplainingView {
 }
 
 #Preview {
-  DogViewWithEnvironment()
+  PlatformDogViewWithEnvironment()
 }

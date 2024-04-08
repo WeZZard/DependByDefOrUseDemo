@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1713392BC37F3700449BC8 /* DogViewWithEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1713382BC37F3700449BC8 /* DogViewWithEnvironmentObject.swift */; };
+		9C17133B2BC436ED00449BC8 /* PlatformDogViewWithEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C17133A2BC436ED00449BC8 /* PlatformDogViewWithEnvironment.swift */; };
+		9C17133D2BC43B2C00449BC8 /* PlatformDogViewWithEnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C17133C2BC43B2C00449BC8 /* PlatformDogViewWithEnvironmentObject.swift */; };
 		9C3C93612B971309009338FC /* PlatformDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C93602B971309009338FC /* PlatformDogView.xib */; };
 		9C456A2E2B9725C800BEF3D2 /* PlatformDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C456A2D2B9725C800BEF3D2 /* PlatformDogView.swift */; };
 		9C456A322B97286500BEF3D2 /* DSLDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C456A312B97286500BEF3D2 /* DSLDogView.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C1713382BC37F3700449BC8 /* DogViewWithEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewWithEnvironmentObject.swift; sourceTree = "<group>"; };
+		9C17133A2BC436ED00449BC8 /* PlatformDogViewWithEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithEnvironment.swift; sourceTree = "<group>"; };
+		9C17133C2BC43B2C00449BC8 /* PlatformDogViewWithEnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogViewWithEnvironmentObject.swift; sourceTree = "<group>"; };
 		9C3C93602B971309009338FC /* PlatformDogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatformDogView.xib; sourceTree = "<group>"; };
 		9C456A2D2B9725C800BEF3D2 /* PlatformDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformDogView.swift; sourceTree = "<group>"; };
 		9C456A312B97286500BEF3D2 /* DSLDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLDogView.swift; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 				9C7B4C1A2B8CDC06006838F8 /* DogViewWithObservedObject.swift */,
 				9C7B4C142B86D5BE006838F8 /* DogViewWithObservableInstance.swift */,
 				9C7B4C162B86D619006838F8 /* DogViewWithEnvironment.swift */,
+				9C1713382BC37F3700449BC8 /* DogViewWithEnvironmentObject.swift */,
 				9C7B4C1C2B8CEA55006838F8 /* DogViewWithBinding.swift */,
 				9C73FE872B92D984006EC561 /* BindingUpstreamView.swift */,
 				9C456A312B97286500BEF3D2 /* DSLDogView.swift */,
@@ -99,6 +106,8 @@
 				9C7B4C2A2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift */,
 				9C7B4C2C2B8DA07C006838F8 /* PlatformDogViewWithObservedObject.swift */,
 				9C7B4C2E2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift */,
+				9C17133A2BC436ED00449BC8 /* PlatformDogViewWithEnvironment.swift */,
+				9C17133C2BC43B2C00449BC8 /* PlatformDogViewWithEnvironmentObject.swift */,
 				9C7B4C302B8DA124006838F8 /* PlatformDogViewWithBinding.swift */,
 				9C456A2D2B9725C800BEF3D2 /* PlatformDogView.swift */,
 				9C3C93602B971309009338FC /* PlatformDogView.xib */,
@@ -224,12 +233,14 @@
 			files = (
 				9C7B4C2B2B8D9EFD006838F8 /* PlatformDogViewWithStateObject.swift in Sources */,
 				9C7B4C1B2B8CDC06006838F8 /* DogViewWithObservedObject.swift in Sources */,
+				9C1713392BC37F3700449BC8 /* DogViewWithEnvironmentObject.swift in Sources */,
 				9C7B4C132B86D0D4006838F8 /* DogViewWithStateObject.swift in Sources */,
 				9C456A322B97286500BEF3D2 /* DSLDogView.swift in Sources */,
 				9C7B4C232B8D91E0006838F8 /* ListOfPlatformViews.swift in Sources */,
 				9CB744EF2B7A8499008CF9FB /* Common.swift in Sources */,
 				9C73FE862B923F60006EC561 /* DependencyExplainingView.swift in Sources */,
 				9C7B4C312B8DA124006838F8 /* PlatformDogViewWithBinding.swift in Sources */,
+				9C17133D2BC43B2C00449BC8 /* PlatformDogViewWithEnvironmentObject.swift in Sources */,
 				9C73FE8A2B94E1FA006EC561 /* DogView.swift in Sources */,
 				9C456A2E2B9725C800BEF3D2 /* PlatformDogView.swift in Sources */,
 				9C7B4C1F2B8CFBAD006838F8 /* DominatingViews.swift in Sources */,
@@ -237,6 +248,7 @@
 				9C7B4C112B86CF2E006838F8 /* DogViewWithState.swift in Sources */,
 				9C7B4C2F2B8DA094006838F8 /* PlatformDogViewWithObservableInstance.swift in Sources */,
 				9C7B4C1D2B8CEA55006838F8 /* DogViewWithBinding.swift in Sources */,
+				9C17133B2BC436ED00449BC8 /* PlatformDogViewWithEnvironment.swift in Sources */,
 				9C7B4C272B8D946E006838F8 /* PlatformDogViewWithState.swift in Sources */,
 				9CB744E02B7A31F5008CF9FB /* StateVSObservationView.swift in Sources */,
 				9C7B4C152B86D5BE006838F8 /* DogViewWithObservableInstance.swift in Sources */,

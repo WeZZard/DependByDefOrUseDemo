@@ -9,6 +9,10 @@ import SwiftUI
 
 protocol DSLDogView: DogView {
   
+  associatedtype ViewModifierType: ViewModifier = EmptyViewModifier
+  
+  func makeViewModifier() -> ViewModifierType
+  
 }
 
 extension DSLDogView {
@@ -43,13 +47,7 @@ extension DSLDogView {
             PawView()
               .font(.largeTitle)
           }
-          if Self.doesViewBodyUseDogAsEnvironment {
-            DogEnvironmentWrapperView {
-              ViewBodyProduceCounterView()
-            }.environment(DogType.keyPath, dog)
-          } else {
-            ViewBodyProduceCounterView()
-          }
+          ViewBodyProduceCounterView()
         }
       }
       VStack(alignment: .leading) {
@@ -65,7 +63,50 @@ extension DSLDogView {
           statusView(Self.usesHappiness)
         }
       }
-    }
+    }.modifier(makeViewModifier())
+  }
+  
+  func makeViewModifier() -> EmptyViewModifier {
+    EmptyViewModifier()
+  }
+  
+}
+
+protocol EnvironmentDSLDogView: DSLDogView where Self.DogType: Equatable, Self.ViewModifierType == EnvironmentValueWritingViewModifier<DogType> {
+  
+  var newDog: DogType { get }
+  
+}
+
+extension EnvironmentDSLDogView {
+  
+  func makeViewModifier() -> EnvironmentValueWritingViewModifier<DogType> {
+    EnvironmentValueWritingViewModifier(dog: newDog)
+  }
+  
+}
+
+struct EnvironmentValueWritingViewModifier<DogType: DogProtocol & Equatable>: ViewModifier {
+  
+  var dog: DogType
+  
+  func body(content: Content) -> some View {
+    content
+      .preference(key: DogValueKey<DogType>.self, value: dog)
+  }
+  
+}
+
+struct DogValueKey<DogType: DogProtocol & Equatable>: PreferenceKey {
+  
+  typealias Value = DogType?
+  
+  static var defaultValue: Value {
+    nil
+  }
+  
+  static func reduce(value: inout Value, nextValue: () -> Value) {
+    value = nextValue()
   }
   
 }
@@ -79,19 +120,3 @@ private let dogFaceImage: some View = Image("dog_face")
   .foregroundColor(.accentColor)
 
 
-fileprivate struct DogEnvironmentWrapperView<Content: View>: View {
-  
-  @Environment(\.dog)
-  var dog
-  
-  let content: Content
-  
-  init(@ViewBuilder content: () -> Content) {
-    self.content = content()
-  }
-  
-  var body: some View {
-    content
-  }
-  
-}
